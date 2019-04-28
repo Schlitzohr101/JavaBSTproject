@@ -174,4 +174,78 @@ public class BST {
         return (lh >= rh ? lh : rh);
     }
 
+    public void display() {
+        if (root == null) {
+            System.out.println("Empty Tree");
+        } else {
+            display(root);
+        }
+    }
+    private void display(Node N) {
+        if (N == null) {
+            return;
+        } else {
+            display(N.getLeft());
+            System.out.print(N.getValue());
+            System.out.print(", ");
+            display(N.getRight());
+        }
+    }
+
+    public void displayTree() {
+        String [] A = new String[32]; //create array placeholder
+        for(int i = 0; i<32; i++) {
+            A[i] = " . ";
+        }
+        String temp;
+        if (root == null) {
+            temp = " . ";
+        } else {
+            temp = Integer.toString(root.getValue());
+        }
+        A[1] = temp;
+
+        buildArray(root, A, 1);
+        //System.out.println("         1         2         3         4         5         6         7         8         9         0");
+        //System.out.println("1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890");
+          System.out.println("                                                                ");
+          System.out.println("                                               "+ A[1]+"        ");
+          System.out.println("                                                |               ");
+          System.out.println("                     "+A[2]+"-------------------------^-----------------------"+A[3]);
+          System.out.println("                       |                                         |  ");
+          System.out.println("          "+A[4]+"-----------^-----------"+A[5]+"                "+A[6]+"-----------^-----------"+A[7]);
+          System.out.println("           |                         |                        |  |       ");
+          System.out.println("    "+A[8]+"----^----"+A[9]+"           "+A[10]+"----^----       "+A[11]+"            "+A[12]+" ----^----"+A[13]+"           "+A[14]+"----^----"+A[15]);
+          System.out.println("     |            |            |            |            |            |            |            |     ");
+          System.out.println(A[16]+"-^-"+A[17]+"    "+A[18]+"-^-"+A[19]+"    "+A[20]+"-^-"+A[21]+"    "+A[22]+"-^-"+A[23]+"    "+A[24]+"-^-"+A[25]+"    "+A[26]+"-^-"+A[27]+"    "+A[28]+"-^-"+A[29]+"    "+A[30]+"-^-"+A[31]);
+          System.out.println();
+    }
+
+    private void buildArray(Node n, String [] strArray, int parentIndex) {
+        if (parentIndex * 2 + 1 > strArray.length) {
+            return;
+        }
+        if (n == null) {
+            return;
+        } else {
+            String temp;
+            if (n.getLeft() == null) {
+                temp = " . ";
+            } else {
+                temp = Integer.toString(n.getLeft().getValue());
+            }
+            strArray[parentIndex*2] = String.format("%3s",temp);
+            buildArray(n.getLeft(), strArray, parentIndex*2);
+
+            if (n.getRight() == null) {
+                temp = " . ";
+            } else {
+                temp = Integer.toString(n.getRight().getValue());
+            }
+            strArray[parentIndex*2+1] = String.format("%3s",temp);
+            buildArray(n.getRight(), strArray, parentIndex*2+1);
+        }
+
+
+    }
 }
