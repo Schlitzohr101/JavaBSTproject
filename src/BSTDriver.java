@@ -1,5 +1,5 @@
-import java.awt.*;
-import java.io.File;
+//import java.awt.*;
+//import java.io.File;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,13 +8,14 @@ public class BSTDriver {
         BST myBst = new BST();
         Random rand = new Random();
         Scanner input = new Scanner(System.in);
-        File testTextfile = new File("/home/schlitzohr/Workspace/javaprojects/JavaBSTproject/src/test.txt");
+        //For ease of testinf
+        //File testTextfile = new File("/home/schlitzohr/Workspace/javaprojects/JavaBSTproject/src/test.txt");
 
-        try {
-            input = new Scanner(testTextfile);
-        } catch (Exception e) {
-            System.out.println("faled to open test file");
-        }
+//        try {
+//            input = new Scanner(testTextfile);
+//        } catch (Exception e) {
+//            System.out.println("faled to open test file");
+//        }
 
         char option = 'Z';
         int num = 0;
@@ -71,15 +72,14 @@ public class BSTDriver {
 
                 case 'R' :
                     System.out.print("How many numbers do you want to add:");
-                    System.out.print("here\n"
-                    );
                     num = input.nextInt();
                     System.out.print("Lower Range:");
                     int min = input.nextInt();
                     System.out.print("Upper Range:");
                     int max = input.nextInt();
+                    System.out.printf("max %d min %d ",max,min);
                     for (int i = 0; i < num; i++) {
-                        myBst.add(rand.nextInt(max-min+1));
+                        myBst.add(rand.nextInt(max-min+1) + min);
                     }
                     break;
                 case 'L' :
@@ -105,9 +105,7 @@ public class BSTDriver {
     }
     public static char menu(Scanner source) {
         System.out.println("(A)dd   (B)alanced?   (P)arent   (C)hildren   (N)ew Tree   (T)ree display  (R)andomize   (Q)uit");
-        String text = source.next();
-        System.out.println(text);
-        char option = text.charAt(0);
+        char option = source.next().charAt(0);
         option = Character.toUpperCase(option);
         return option;
     }
