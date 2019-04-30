@@ -60,7 +60,7 @@ public class BSTDriver {
                     break;
 
                 case 'R' :
-                    System.out.print("How many nubers do you want to add:");
+                    System.out.print("How many numbers do you want to add:");
                     num = input.nextInt();
                     System.out.print("Lower Range:");
                     int min = input.nextInt();
@@ -84,7 +84,8 @@ public class BSTDriver {
     }
     public static void treeStats(BST tree) {
         System.out.println("\nWelcome to the Jungle");
-        System.out.println("-Tree Stats- Root:"+tree.getRoot());
-        System.out.println("");
+        System.out.println("-Tree Stats- Root: "+tree.getRoot());
+        System.out.println("             Height: "+tree.getHeight());
+        System.out.println("             Count: "+tree.getCount());
     }
 }

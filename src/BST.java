@@ -48,20 +48,18 @@ public class BST {
     public BST() {root = null;}
 
     public int getRoot() {
-        return (root == null ? -1 : root.getValue());
+        return (root == null ? 0 : root.getValue());
     }
     public int getCount() {
         //error check for if the tree is empty
-        return (getRoot() < 0 ? 0 : 1+getCount(root));
+        return (getRoot() <= 0 ? 0 : 1+getCount(root));
     }
     private int getCount(Node N) {
-        if (N.getLeft() != null) {
-            return 1 + getCount(N.getLeft());
-        } else if (N.getRight() != null) {
-            return 1 + getCount(N.getRight());
-        } else {
+
+        if (N == null) {
             return 0;
         }
+        
     }
     public int findLevel(int x) {
         return findLevel(root,x,0);
@@ -109,7 +107,12 @@ public class BST {
         return (n == null ? -1 : n.getRight() == null ? -1 : n.getRight().getValue());
     }
     public void add(int x) {
-
+        if (root == null) {
+            Node newNode = new Node(x);
+            root = newNode;
+        } else {
+            add(root, x);
+        }
     }
     private void add(Node N, int x) {
         //Check to see if the value is less than or equal to the current node
@@ -162,13 +165,14 @@ public class BST {
     private int getHeight(Node N) {
         int lh = 0; //height of each sub tree
         int rh = 0; //height of each sub tree
-        //check to see if the node has a left child, then a right child
-        if (N.getLeft() != null) {
-            //if the node has a left child return the height of that node plus the height of the current node
-            lh = 1+getHeight(N.getLeft());
-        } else if (N.getRight() != null) {
-            //if the node has a right child return the height of that node plus the height of the current node
-            rh = 1+getHeight(N.getRight());
+        if (N != null) {
+            if (N.getLeft() != null) {  //check to see if the node has a left child, then a right child
+                //if the node has a left child return the height of that node plus the height of the current node
+                lh = 1 + getHeight(N.getLeft());
+            } else if (N.getRight() != null) {
+                //if the node has a right child return the height of that node plus the height of the current node
+                rh = 1 + getHeight(N.getRight());
+            }
         }
         // check to see which of the subtrees are larger and return it
         return (lh >= rh ? lh : rh);
