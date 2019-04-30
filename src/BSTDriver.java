@@ -1,3 +1,5 @@
+import java.awt.*;
+import java.io.File;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -6,12 +8,19 @@ public class BSTDriver {
         BST myBst = new BST();
         Random rand = new Random();
         Scanner input = new Scanner(System.in);
+        File testTextfile = new File("/home/schlitzohr/Workspace/javaprojects/JavaBSTproject/src/test.txt");
+
+        try {
+            input = new Scanner(testTextfile);
+        } catch (Exception e) {
+            System.out.println("faled to open test file");
+        }
 
         char option = 'Z';
         int num = 0;
         treeStats(myBst);
 
-        option = menu();
+        option = menu(input);
         while (option != 'Q') {
             switch (option)
             {
@@ -33,9 +42,10 @@ public class BSTDriver {
                     System.out.print("Enter a number to find the parent:");
                     num = input.nextInt();
                     int parent = myBst.findParent(num);
+                    System.out.println();
                     if (parent == -1) {
                         System.out.printf("Number %d does not exist in the tree\n",num);
-                    } else if (parent == 0) {
+                    } else if (parent == -2) {
                         System.out.printf("Number %d is the root of the tree\n",num);
                     } else {
                         System.out.printf("Parent of %d is %d\n",num,myBst.findParent(num));
@@ -47,7 +57,7 @@ public class BSTDriver {
                     num = input.nextInt();
                     int lc = myBst.findLeftChild(num);
                     int rc = myBst.findRightChild(num);
-                    System.out.printf("Number:%d, leftChild:%d, RightChild:%d\n",num, lc, rc);
+                    System.out.printf("Number:%d, "+(lc == -1 ? " Left Child Null" : "leftChild:%d")+", "+(rc == -1 ? "Right Child Null" : "RightChild:%d")+"\n",num, lc, rc);
                     break;
 
                 case 'N' :
@@ -61,6 +71,8 @@ public class BSTDriver {
 
                 case 'R' :
                     System.out.print("How many numbers do you want to add:");
+                    System.out.print("here\n"
+                    );
                     num = input.nextInt();
                     System.out.print("Lower Range:");
                     int min = input.nextInt();
@@ -70,15 +82,32 @@ public class BSTDriver {
                         myBst.add(rand.nextInt(max-min+1));
                     }
                     break;
+                case 'L' :
+                    System.out.print("Which number to find level: ");
+                    num = input.nextInt();
+                    int level = myBst.findLevel(num);
+                    System.out.println();
+                    if (level == 1) {
+                        System.out.printf("The number %d was not found in the tree",num);
+                    } else if ( level == -1) {
+                        System.out.printf("The number %d is the root of the tree",num);
+                    } else {
+                        System.out.printf("\nThe number %d was found on level %d", num, level);
+                    }
+
+                    break;
             }
             treeStats(myBst);
-            option = menu();
+            option = menu(input);
+
+
         }
     }
-    public static char menu() {
-        Scanner in = new Scanner(System.in);
+    public static char menu(Scanner source) {
         System.out.println("(A)dd   (B)alanced?   (P)arent   (C)hildren   (N)ew Tree   (T)ree display  (R)andomize   (Q)uit");
-        char option = in.next().charAt(0);
+        String text = source.next();
+        System.out.println(text);
+        char option = text.charAt(0);
         option = Character.toUpperCase(option);
         return option;
     }
@@ -87,5 +116,7 @@ public class BSTDriver {
         System.out.println("-Tree Stats- Root: "+tree.getRoot());
         System.out.println("             Height: "+tree.getHeight());
         System.out.println("             Count: "+tree.getCount());
+        tree.display();
+        System.out.println();
     }
 }
