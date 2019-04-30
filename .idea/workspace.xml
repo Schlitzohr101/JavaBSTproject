@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="49a1756c-299b-4a7c-9755-4d275e197b01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/BSTDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BSTDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BST.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BST.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,7 +19,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BSTDriver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1587">
@@ -32,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="897">
-              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+            <state relative-caret-position="1719">
+              <caret line="245" column="64" selection-start-line="245" selection-start-column="64" selection-end-line="245" selection-end-column="64" />
               <folding>
                 <element signature="e#416#417#0" expanded="true" />
                 <element signature="e#452#453#0" expanded="true" />
@@ -47,6 +49,18 @@
                 <element signature="e#810#811#0" expanded="true" />
                 <element signature="e#838#839#0" expanded="true" />
                 <element signature="e#879#880#0" expanded="true" />
+                <element signature="e#562#563#0" expanded="true" />
+                <element signature="e#602#603#0" expanded="true" />
+                <element signature="e#716#717#0" expanded="true" />
+                <element signature="e#758#759#0" expanded="true" />
+                <element signature="e#876#877#0" expanded="true" />
+                <element signature="e#920#921#0" expanded="true" />
+                <element signature="e#1009#1010#0" expanded="true" />
+                <element signature="e#1069#1070#0" expanded="true" />
+                <element signature="e#4196#4197#0" expanded="true" />
+                <element signature="e#4235#4236#0" expanded="true" />
+                <element signature="e#4640#4641#0" expanded="true" />
+                <element signature="e#4678#4679#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,9 +88,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="y" value="540" />
-    <option name="width" value="1279" />
-    <option name="height" value="1040" />
+    <option name="x" value="2560" />
+    <option name="width" value="1919" />
+    <option name="height" value="2160" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -84,6 +98,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -101,12 +116,16 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
@@ -132,19 +151,19 @@
       <option name="presentableId" value="Default" />
       <updated>1555717324193</updated>
       <workItem from="1555717327018" duration="90000" />
-      <workItem from="1555717427650" duration="1349000" />
-      <workItem from="1556601292820" duration="1192000" />
+      <workItem from="1555717427650" duration="7234000" />
+      <workItem from="1556478799967" duration="4112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2739000" />
+    <option name="totallyTimeSpent" value="11436000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="540" width="1279" height="1040" extended-state="4" />
+    <frame x="2560" y="0" width="1919" height="2160" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18572587" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18259476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -191,8 +210,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="897">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        <state relative-caret-position="1719">
+          <caret line="245" column="64" selection-start-line="245" selection-start-column="64" selection-end-line="245" selection-end-column="64" />
           <folding>
             <element signature="e#416#417#0" expanded="true" />
             <element signature="e#452#453#0" expanded="true" />
@@ -206,6 +225,18 @@
             <element signature="e#810#811#0" expanded="true" />
             <element signature="e#838#839#0" expanded="true" />
             <element signature="e#879#880#0" expanded="true" />
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#602#603#0" expanded="true" />
+            <element signature="e#716#717#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
+            <element signature="e#876#877#0" expanded="true" />
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#1009#1010#0" expanded="true" />
+            <element signature="e#1069#1070#0" expanded="true" />
+            <element signature="e#4196#4197#0" expanded="true" />
+            <element signature="e#4235#4236#0" expanded="true" />
+            <element signature="e#4640#4641#0" expanded="true" />
+            <element signature="e#4678#4679#0" expanded="true" />
           </folding>
         </state>
       </provider>
